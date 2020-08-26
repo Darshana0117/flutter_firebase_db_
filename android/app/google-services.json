@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "248229183402",
+    "firebase_url": "https://social-login-todo.firebaseio.com",
+    "project_id": "social-login-todo",
+    "storage_bucket": "social-login-todo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248229183402:android:f28f5be3a988f3d2cb75d3",
+        "android_client_info": {
+          "package_name": "com.darshana.flutterfirebasedb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248229183402-qduvknlge9rmvho4ngfq9up0i9vg8iro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.darshana.flutterfirebasedb",
+            "certificate_hash": "9416f056da751f673f032379bd72b3f8875cdc52"
+          }
+        },
+        {
+          "client_id": "248229183402-tl1p7i2ka3m3jsi3s0tvbu184j2l7n24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEnah65IH4c8LnFWLWw5vDgPDZnGaKxeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248229183402-tl1p7i2ka3m3jsi3s0tvbu184j2l7n24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
