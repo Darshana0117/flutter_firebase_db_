@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+ // final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FacebookLogin facebookSignIn = new FacebookLogin();
 
   Stream<FirebaseUser> onAuthChanged() {
     return _firebaseAuth.onAuthStateChanged;
@@ -28,6 +32,27 @@ class AuthService {
     await _firebaseAuth.signInWithCredential(credential);
     FirebaseUser user = await _firebaseAuth.currentUser();
     return user.uid;
+  }
+  Future<String> signInFacebook() async {
+    print("facebookk--------------------------------------------------------------------");
+    //await facebookSignIn.logOut();
+    final FacebookLoginResult result =
+    await facebookSignIn.logInWithReadPermissions(['email']);
+    print("token------"+result.accessToken.token);
+
+    final AuthCredential credential = FacebookAuthProvider.getCredential(
+      accessToken: result.accessToken.token.toString(),
+
+    );
+    print("credential------"+credential.toString());
+    AuthResult authResult = await _firebaseAuth.signInWithCredential(credential);
+  //  final FirebaseUser user = authResult.user;
+    //Token: ${accessToken.token}
+  //  print(authResult);
+    final FirebaseUser user = await _firebaseAuth.currentUser();
+    final uid = user.uid;
+    print(uid);
+    return uid;
   }
 
   Future<bool> isSignedIn() async {

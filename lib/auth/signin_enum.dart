@@ -1,1 +1,1 @@
-enum SignInType { EMAIL_PASSWORD, GOOGLE }
+enum SignInType { EMAIL_PASSWORD, GOOGLE,FACEBOOK }

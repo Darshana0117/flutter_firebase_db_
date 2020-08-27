@@ -35,11 +35,8 @@ dependencies:
   google_sign_in: ^4.5.1
   cloud_firestore: ^0.13.7
   firebase_storage: ^3.1.6
-  multi_image_picker: ^4.6.7
-  carousel_slider: ^2.2.1
-  flutter_staggered_grid_view: ^0.3.0
   shimmer: ^1.1.1
-  cached_network_image: ^2.2.0+1
+  flutter_facebook_login: ^1.1.1
 
 dev_dependencies:
   flutter_test:

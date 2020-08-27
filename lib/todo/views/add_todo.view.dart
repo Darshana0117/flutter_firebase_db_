@@ -35,8 +35,8 @@ class _AddTodoState extends State<AddTodo> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    titleController.clear();
-    Get.parameters.clear();
+   // titleController.clear();
+  //  Get.parameters.clear();
   }
   @override
   Widget build(BuildContext context) {

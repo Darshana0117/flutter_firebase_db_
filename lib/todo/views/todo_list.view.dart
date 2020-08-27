@@ -17,20 +17,30 @@ class _TodoListState extends State<TodoList> {
   @override
   void dispose() {
     // TODO: implement dispose
+
     super.dispose();
+     // authController.disposeKey("");
 
   }
   @override
   Widget build(BuildContext context) {
     TodoController c = Get.put<TodoController>(TodoController());
+    Future<void> _refreshInfo() async
+    {
+    Get.offAllNamed(
+        "/");
+  //    await getData();
+
+
+    }
     print(authController?.user?.value?.email);
     return Scaffold(
       key: scaffoldKey,
       //  drawer: AppDrawer(),
       appBar: AppBar(
-        title: Obx(() => authController.user != null
+        title: authController.user != null
             ? Text(" ${authController?.user?.value?.email.split("@")[0]}",overflow: TextOverflow.ellipsis,)
-            : Container()),
+            : Container(),
         centerTitle: true,
         leading: IconButton(
             onPressed: () {
@@ -54,11 +64,14 @@ class _TodoListState extends State<TodoList> {
         if (c.todos.length == 0) {
           return Center(child: Text('Nothing to do'));
         }
-        return ListView.builder(
-            itemCount: c.todos.length,
-            itemBuilder: (context, index) {
-              return TodoItem(c.todos.elementAt(index));
-            });
+        return RefreshIndicator(
+          onRefresh: _refreshInfo,
+          child: ListView.builder(
+              itemCount: c.todos.length,
+              itemBuilder: (context, index) {
+                return TodoItem(c.todos.elementAt(index));
+              }),
+        );
       }),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.toNamed("/add-todo"),

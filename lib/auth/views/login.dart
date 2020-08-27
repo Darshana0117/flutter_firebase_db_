@@ -41,6 +41,15 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
+
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
                   FlatButton(
                     padding: EdgeInsets.all(8),
                     color: Colors.primaries[0],
@@ -52,6 +61,18 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
+                  FlatButton(
+                    padding: EdgeInsets.all(8),
+                    color: Colors.primaries[4],
+                    onPressed: () {
+                      authController.handleSignIn(SignInType.FACEBOOK);
+                    },
+                    child: Text(
+                      "SignIn with Facebook",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+
                 ],
               ),
             ),

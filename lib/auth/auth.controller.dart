@@ -71,6 +71,10 @@ class AuthController extends GetxController {
         await _authService.signInWithGoogle();
         print("hello");
       }
+      if (type == SignInType.FACEBOOK) {
+        await _authService.signInFacebook();
+        print("hello");
+      }
     } catch (e) {
       Get.back();
       Get.defaultDialog(title: "Error", middleText: e.message, actions: [
